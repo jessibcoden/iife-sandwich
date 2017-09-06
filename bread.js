@@ -4,4 +4,6 @@ var SandwichMaker = (function(maker){
 	maker.getBreads = function(){
 		return breads
 	}
-})
+
+	return maker;
+})(SandwichMaker || {});
