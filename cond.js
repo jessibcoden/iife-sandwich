@@ -4,16 +4,18 @@ var SandwichMaker = (function(maker){
 				  "Honey Mustard": 0.25, 
 				  "Cream Cheese": 0.75, 
 				  "Oil & Vinegar": 0.50
-				};
+	};
 
-	maker.getCond = function(){
+	maker.getCond = () => {
+		return cond;
+	};
+
+	maker.writeCond = function(){
 		let domString = "";
 		for(let i = 0; i < Object.keys(cond).length; i++){
-		console.log("looping")
-			domString += `<label>`;
-			domString +=	`<input type="checkbox">${Object.keys(cond)[i]}`;
-			domString += `</label>`;
+			domString += `<input type="checkbox" class="checkbox" name="${Object.keys(cond)[i]}" value="${cond[Object.keys(cond)[i]]}">${Object.keys(cond)[i]}`;
 		}
+
 		writeToDom(domString);
 	}
 

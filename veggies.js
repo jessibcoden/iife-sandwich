@@ -4,21 +4,23 @@ var SandwichMaker = (function(maker){
 					"Onion": 0.25, 
 					"Pickles": 0.25, 
 					"Spinach": 0.50
-				};
+	};
 
-	maker.getVegg = function(){
+	maker.getVegg = () => {
+		return vegg;
+	};
+
+	maker.writeVegg = function(){
 		let domString = "";
 		for(let i = 0; i < Object.keys(vegg).length; i++){
-		console.log("looping")
-			domString += `<label>`;
-			domString +=	`<input type="checkbox">${Object.keys(vegg)[i]}`;
-			domString += `</label>`;
+			domString += `<input type="checkbox" class="checkbox" name="${Object.keys(vegg)[i]}" value="${vegg[Object.keys(vegg)[i]]}">${Object.keys(vegg)[i]}`;
 		}
+
 		writeToDom(domString);
 	}
 
 	function writeToDom (string){
-	document.getElementById("bread-options").innerHTML = string;
+	document.getElementById("vegg-options").innerHTML = string;
 }
 	return maker;
 
