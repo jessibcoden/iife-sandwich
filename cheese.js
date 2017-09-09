@@ -4,16 +4,18 @@ var SandwichMaker = (function(maker){
 					"Brie": 1.25, 
 					"Smoked Gouda": 1.25, 
 					"Provolone": 0.99
-				};
+	};
 
-	maker.getCheese = function(){
+	maker.getCheese = () => {
+		return cheese;
+	};
+
+	maker.writeCheese = function(){
 		let domString = "";
 		for(let i = 0; i < Object.keys(cheese).length; i++){
-		console.log("looping")
-			domString += `<label>`;
-			domString +=	`<input type="checkbox">${Object.keys(cheese)[i]}`;
-			domString += `</label>`;
+			domString += `<input type="checkbox" class="checkbox" name="${Object.keys(cheese)[i]}" value="${cheese[Object.keys(cheese)[i]]}">${Object.keys(cheese)[i]}`;
 		}
+
 		writeToDom(domString);
 	}
 

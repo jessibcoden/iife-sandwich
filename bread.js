@@ -6,16 +6,18 @@ var SandwichMaker = (function(maker){
 					"Wheat": 0.70, 
 					"Sub Roll": 0.70, 
 					"Tortilla Wrap": 0.60
-				};
+	};
 
-	maker.getBreads = function(){
+	maker.getBreads = () => {
+		return breads;
+	}
+
+	maker.writeBreads = function(){
 		let domString = "";
 		for(let i = 0; i < Object.keys(breads).length; i++){
-		console.log("looping")
-			domString += `<label>`;
-			domString +=	`<input type="checkbox">${Object.keys(breads)[i]}`;
-			domString += `</label>`;
+			domString += `<input type="checkbox" class="checkbox" name="${Object.keys(breads)[i]}" value="${breads[Object.keys(breads)[i]]}">${Object.keys(breads)[i]}`;
 		}
+
 		writeToDom(domString);
 	}
 
