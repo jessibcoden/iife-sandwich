@@ -18,7 +18,6 @@ for(let i = 0; i < checkbox.length; i++){
 
 let mySandwich = [];
 
-
 function buildSandwich(event){
 	if(event.target.checked === true){
 		mySandwich.push({topping: event.target.name, price: event.target.value});
@@ -30,6 +29,7 @@ function buildSandwich(event){
 			if(mySandwich[j].topping === event.target.name){
 				mySandwich.splice(j, 1);			
 			}		
+
 		}
 	}
 	let sandString = "";
@@ -45,9 +45,4 @@ function buildSandwich(event){
 
 let writeToDom = (strang) => {
 	document.getElementById("selected-ingredients").innerHTML = strang;
-}
-
-
-
-
-
+}		
