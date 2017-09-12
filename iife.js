@@ -29,23 +29,20 @@ function buildSandwich(event){
 			if(mySandwich[j].topping === event.target.name){
 				mySandwich.splice(j, 1);			
 			}		
-		}		
+
+		}
 	}
-	console.log("my sandwich and price", mySandwich);
+	let sandString = "";
+	let totalPrice = 0;
+	mySandwich.forEach((sandwich) => {
+		sandString += `<p>${sandwich.topping}</p>`;
+		totalPrice += parseFloat(sandwich.price); 
+	})
+		sandString += `<p>Total Price: $${totalPrice.toFixed(2)}</p>`;
+
+	writeToDom(sandString);	
 }
-
-let sandString = "";
-
-mySandwich.forEach((topping) => {
-	console.log("anything");
-	sandString =+ `<p>${mySandwich.topping}</p>`;
-});
 
 let writeToDom = (strang) => {
 	document.getElementById("selected-ingredients").innerHTML = strang;
-}
-
-writeToDom(sandString);
-
-
-
+}		
