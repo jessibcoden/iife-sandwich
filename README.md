@@ -1,6 +1,6 @@
 # iife Sandwich
 
-> Nashville Software School, Full-Stack Dev Bootcamp, Front-End Independant Exercise
+> Nashville Software School, Full-Stack Dev Bootcamp, Front-End Independent Exercise
 > 
 
 ## Requirements
